@@ -5,8 +5,8 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 
 $profileUrl = Yii::$app->getModule('auth0')->auth0->getUser()['picture'];
-$tenantName = Html::encode(Yii::$app->tenant->identity->name);
-$username = Html::encode(Yii::$app->user->identity->username);
+$tenantName = (isset(Yii::$app->tenant->identity)) ? Html::encode(Yii::$app->tenant->identity->name) : '--';
+$username = (isset(Yii::$app->user->identity)) ?  Html::encode(Yii::$app->user->identity->username) : '--';
 $logoutUrl = Url::to(['/auth0/user/logout']);
 
 ?>
