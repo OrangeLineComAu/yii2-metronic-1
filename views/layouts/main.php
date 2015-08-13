@@ -1,13 +1,18 @@
 <?php
 
 use anli\metronic\assets\MainAsset;
+use anli\helper\assets\ModalAsset;
 use yii\helpers\Html;
+use yii\helpers\Url;
 use yii\widgets\Breadcrumbs;
+use yii\bootstrap\Modal;
+use yii\widgets\Pjax;
 
 /* @var $this \yii\web\View */
 /* @var $content string */
 
 MainAsset::register($this);
+ModalAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -31,12 +36,20 @@ MainAsset::register($this);
 
 <div class="page-container">
 
+    <!-- BEGIN MODAL -->
+    <?php Modal::begin(['id' => 'modal', 'size' => 'modal-lg',]);
+        echo "<div id='modalContent'><div style=\"text-align:center\">" . Html::img('@web/images/ajax-loader.gif') . "</div></div>";
+    Modal::end();?>
+    <!-- END MODAL -->
+
     <!-- BEGIN SIDEBAR -->
 	<?= $this->render('_sidebar') ?>
 	<!-- END SIDEBAR -->
 
     <div class="page-content-wrapper">
         <div class="page-content">
+
+
             <!-- BEGIN PAGE HEADER-->
 			<h3 class="page-title">
 			<?= Html::encode($this->title) ?> <small></small>
