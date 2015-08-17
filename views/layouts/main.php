@@ -2,6 +2,7 @@
 
 use anli\metronic\assets\MainAsset;
 use anli\helper\assets\ModalAsset;
+use anli\helper\assets\PjaxAsset;
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\widgets\Breadcrumbs;
@@ -13,6 +14,7 @@ use yii\widgets\Pjax;
 
 MainAsset::register($this);
 ModalAsset::register($this);
+PjaxAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
