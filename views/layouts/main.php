@@ -37,7 +37,7 @@ ModalAsset::register($this);
 <div class="page-container">
 
     <!-- BEGIN MODAL -->
-    <?php Modal::begin(['id' => 'modal', 'size' => 'modal-lg',]);
+    <?php Modal::begin(['id' => 'modal',]);
         echo "<div id='modalContent'><div style=\"text-align:center\">" . Html::img('@web/images/ajax-loader.gif') . "</div></div>";
     Modal::end();?>
     <!-- END MODAL -->
