@@ -3,6 +3,7 @@
 use anli\metronic\assets\MainAsset;
 use anli\helper\assets\ModalAsset;
 use anli\helper\assets\PjaxAsset;
+use anli\helper\assets\Select2Asset;
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\widgets\Breadcrumbs;
@@ -15,6 +16,7 @@ use yii\widgets\Pjax;
 MainAsset::register($this);
 ModalAsset::register($this);
 PjaxAsset::register($this);
+Select2Asset::register($this);
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -35,14 +37,8 @@ PjaxAsset::register($this);
 <!-- END HEADER -->
 
 <div class="clearfix"></div>
-
+<div class="">
 <div class="page-container">
-
-    <!-- BEGIN MODAL -->
-    <?php Modal::begin(['id' => 'modal',]);
-        echo "<div id='modalContent'><div style=\"text-align:center\">" . Html::img('@web/images/ajax-loader.gif') . "</div></div>";
-    Modal::end();?>
-    <!-- END MODAL -->
 
     <!-- BEGIN SIDEBAR -->
 	<?= $this->render('_sidebar') ?>
@@ -51,6 +47,11 @@ PjaxAsset::register($this);
     <div class="page-content-wrapper">
         <div class="page-content">
 
+            <!-- BEGIN MODAL -->
+            <?php Modal::begin(['id' => 'modal', 'options' => ['tabindex' => false]]);
+                echo "<div id='modalContent'><div style=\"text-align:center\">" . Html::img('@web/images/ajax-loader.gif') . "</div></div>";
+            Modal::end();?>
+            <!-- END MODAL -->
 
             <!-- BEGIN PAGE HEADER-->
 			<h3 class="page-title">
@@ -71,7 +72,7 @@ PjaxAsset::register($this);
         </div>
     </div>
 </div>
-
+</div>
 <!-- BEGIN FOOTER -->
 <?= $this->render('_footer') ?>
 <!-- END FOOTER -->
