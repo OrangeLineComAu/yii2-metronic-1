@@ -10,6 +10,7 @@ use yii\helpers\Url;
 use yii\widgets\Breadcrumbs;
 use yii\bootstrap\Modal;
 use yii\widgets\Pjax;
+use kartik\alert\AlertBlock;
 
 /* @var $this \yii\web\View */
 /* @var $content string */
@@ -69,9 +70,22 @@ GridViewAsset::register($this);
 			</div>
 			<!-- END PAGE HEADER-->
 
-            <!-- BEGIN PAGE CONTENT-->
-            <?= $content ?>
-            <!-- END PAGE CONTENT-->
+            <?php Pjax::begin(['id' => 'container-pjax', 'timeout' => false]); ?>
+
+                <!-- BEGIN Alert Block -->
+                <?= AlertBlock::widget([
+                        'delay' => 0,
+                        'useSessionFlash' => true,
+                        'type' => AlertBlock::TYPE_ALERT,
+                    ]);
+                ?>
+                <!-- END Alert Block -->
+
+                <!-- BEGIN PAGE CONTENT-->
+                <?= $content ?>
+                <!-- END PAGE CONTENT-->
+
+            <?php Pjax::end(); ?>
         </div>
     </div>
 </div>
