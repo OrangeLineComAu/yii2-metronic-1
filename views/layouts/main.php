@@ -4,6 +4,7 @@ use anli\metronic\assets\MainAsset;
 use anli\helper\assets\ModalAsset;
 use anli\helper\assets\PjaxAsset;
 use anli\helper\assets\Select2Asset;
+use anli\helper\assets\GridViewAsset;
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\widgets\Breadcrumbs;
@@ -17,6 +18,8 @@ MainAsset::register($this);
 ModalAsset::register($this);
 PjaxAsset::register($this);
 Select2Asset::register($this);
+GridViewAsset::register($this);
+
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
