@@ -12,7 +12,7 @@
     ],
     "require": {
         "yiisoft/yii2": "*",
-        "anli/helper": "*"
+        "anli/yii2-helper": "*"
     },
     "autoload": {
         "psr-4": {
