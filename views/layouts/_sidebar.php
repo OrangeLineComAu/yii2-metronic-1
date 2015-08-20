@@ -2,7 +2,7 @@
 use yii\bootstrap\Nav;
 use anli\metronic\widgets\NavBar;
 
-$items = Yii::$app->params['sidebarItems'];
+$items = $this->params['sidebarItems'];
 ?>
 
 <!-- BEGIN NAVBAR -->
