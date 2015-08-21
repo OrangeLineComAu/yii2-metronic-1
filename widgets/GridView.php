@@ -7,12 +7,13 @@
 
 namespace anli\metronic\widgets;
 
+use anli\helper\assets\GridViewAsset;
 use Yii;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\bootstrap\Widget;
 use yii\bootstrap\BootstrapPluginAsset;
-use yii\grid\GridView as BaseGridView;
+use kartik\grid\GridView as BaseGridView;
 
 /**
  * This is the grid view widget class.
@@ -44,6 +45,11 @@ class GridView extends Widget
     public $dataProvider;
 
     /**
+     * @param mixed
+     */
+    public $filterModel;
+
+    /**
      * @param array
      */
     public $columns = [];
@@ -56,6 +62,8 @@ class GridView extends Widget
         'tableOptions' => ['class' => 'table table-hover table-light'],
         'summary' => '',
         'headerRowOptions' => ['class' => 'uppercase'],
+        'export' => false,
+        'pjax' => true,
     ];
 
     /**
@@ -68,10 +76,13 @@ class GridView extends Widget
         $this->configs = array_replace_recursive($this->configs, ['dataProvider' => $this->dataProvider]);
         $this->configs = array_replace_recursive($this->configs, ['columns' => $this->columns]);
         $this->configs = array_replace_recursive($this->configs, ['dataProvider' => $this->dataProvider]);
+        $this->configs = array_replace_recursive($this->configs, ['filterModel' => $this->filterModel]);
 
         if ('' != $this->id) {
             $this->configs = array_replace_recursive($this->configs, ['id' => $this->id]);
         }
+
+        GridViewAsset::register($this->getView());
     }
 
     /**
