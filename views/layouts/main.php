@@ -2,8 +2,8 @@
 
 use anli\metronic\assets\MainAsset;
 use anli\helper\assets\ModalAsset;
-use anli\helper\assets\PjaxAsset;
 use anli\helper\assets\Select2Asset;
+use anli\helper\assets\TooltipAsset;
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\widgets\Breadcrumbs;
@@ -16,9 +16,8 @@ use kartik\alert\AlertBlock;
 
 MainAsset::register($this);
 ModalAsset::register($this);
-PjaxAsset::register($this);
 Select2Asset::register($this);
-
+TooltipAsset::register($this)
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -68,8 +67,7 @@ Select2Asset::register($this);
 			</div>
 			<!-- END PAGE HEADER-->
 
-            <?php Pjax::begin(['id' => 'container-pjax', 'timeout' => false]); ?>
-
+                <?php Pjax::begin(['id' => 'message-pjax', 'timeout' => false]); ?>
                 <!-- BEGIN Alert Block -->
                 <?= AlertBlock::widget([
                         'delay' => 0,
@@ -78,12 +76,13 @@ Select2Asset::register($this);
                     ]);
                 ?>
                 <!-- END Alert Block -->
+                <?php Pjax::end(); ?>
 
                 <!-- BEGIN PAGE CONTENT-->
                 <?= $content ?>
                 <!-- END PAGE CONTENT-->
 
-            <?php Pjax::end(); ?>
+
         </div>
     </div>
 </div>
