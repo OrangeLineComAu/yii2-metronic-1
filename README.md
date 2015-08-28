@@ -21,11 +21,20 @@ or add
 
 to the require section of your `composer.json` file.
 
+Download the latest metronic files and copy the contents in the `theme` folder to `@web/metronic/theme/`.
+
+Copy the contents of the `js` folder to the `@web/js/` folder.
+
+Copy the contents of the `images` folder to the `@web/images/` folder.
 
 Usage
 -----
 
-Once the extension is installed, simply use it in your code by  :
+Add to the `controller` or `module` file:
 
-```php
-<?= \anli\metronic\AutoloadExample::widget(); ?>```
+```
+/**
+ * @inheritdoc
+ */
+public $layout = '@vendor/anli/yii2-metronic/views/layouts/main';
+```
