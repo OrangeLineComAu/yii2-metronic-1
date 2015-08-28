@@ -1,6 +1,14 @@
 CHANGELOG
 =====
 
+1.1.0 [28 Aug 2015]
+-----
+
+* `enh` Added alert block widget
+* `enh` Added sidebar to get from view params
+* `chg` Changed gridview assets to widget
+* `enh` Added tooltip assets
+
 1.0.0 [19 Aug 2015]
 -----
 
