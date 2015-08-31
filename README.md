@@ -23,7 +23,7 @@ to the require section of your `composer.json` file.
 
 Download the latest metronic files and copy the contents in the `theme` folder to `@web/metronic/theme/`.
 
-Copy the contents of the `js` folder to the `@web/js/` folder.
+Copy the contents of the `js` folder to the `@web/metronic/js/` folder.
 
 Copy the contents of the `images` folder to the `@web/images/` folder.
 
