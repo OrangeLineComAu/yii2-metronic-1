@@ -1,6 +1,11 @@
 CHANGELOG
 =====
 
+1.2.0 [1 Sep 2015]
+-----
+
+* `enh` Refactor modal in main layout
+
 1.1.0 [28 Aug 2015]
 -----
 
