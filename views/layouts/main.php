@@ -50,7 +50,13 @@ TooltipAsset::register($this)
 
             <!-- BEGIN MODAL -->
             <?php Modal::begin(['id' => 'modal', 'options' => ['tabindex' => false]]);
-                echo "<div id='modalContent'><div style=\"text-align:center\">" . Html::img('@web/images/ajax-loader.gif') . "</div></div>";
+
+                echo Html::beginTag('div', ['id' => 'modalContent']);
+                    echo Html::beginTag('div', ['style' => 'text-align: center;']);
+                        echo Html::img('@web/images/ajax-loader.gif');
+                    echo Html::endTag('div');
+                echo Html::endTag('div');
+                
             Modal::end();?>
             <!-- END MODAL -->
 
