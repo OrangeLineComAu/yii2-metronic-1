@@ -8,6 +8,7 @@ $profileUrl = Yii::$app->getModule('auth0')->auth0->getUser()['picture'];
 $tenantName = (isset(Yii::$app->tenant->identity)) ? Html::encode(Yii::$app->tenant->identity->name) : '--';
 $username = (isset(Yii::$app->user->identity)) ?  Html::encode(Yii::$app->user->identity->username) : '--';
 $logoutUrl = Url::to(['/auth0/user/logout']);
+$switchTenantUrl = Url::to(['/auth0/tenant/login']);
 
 ?>
 
@@ -41,6 +42,9 @@ $logoutUrl = Url::to(['/auth0/user/logout']);
 						<i class="fa fa-angle-down"></i>
 						</a>
 						<ul class="dropdown-menu dropdown-menu-default">
+							<li>
+								<?= Html::a('<i class="icon-share-alt"></i> Change Tenant </a>',  false, ['value' => $switchTenantUrl, 'class' => 'showModalButton']) ?>
+							</li>
 							<li>
 								<?= Html::a('<i class="icon-key"></i> Log Out </a>', $logoutUrl, ['data-method' => 'post']) ?>
 							</li>

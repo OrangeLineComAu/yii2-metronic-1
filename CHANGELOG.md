@@ -1,6 +1,11 @@
 CHANGELOG
 =====
 
+1.3.0 [2 Sep 2015]
+-----
+
+* `enh` Added change tenant link to layout
+
 1.2.0 [1 Sep 2015]
 -----
 
