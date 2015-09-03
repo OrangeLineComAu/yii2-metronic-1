@@ -1,6 +1,11 @@
 CHANGELOG
 =====
 
+1.4.0 [3 Sep 2015]
+-----
+
+* `enh` Added error layout
+
 1.3.0 [2 Sep 2015]
 -----
 
