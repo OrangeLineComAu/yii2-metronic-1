@@ -1,6 +1,6 @@
 <?php
 
-use anli\metronic\Assets\ErrorAsset;
+use anli\metronic\assets\ErrorAsset;
 use yii\helpers\Html;
 
 /* @var $this \yii\web\View */

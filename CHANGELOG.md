@@ -1,6 +1,11 @@
 CHANGELOG
 =====
 
+1.4.1 [3 Sep 2015]
+-----
+
+* `bug` Fixed namespace for error assets in error layout
+
 1.4.0 [3 Sep 2015]
 -----
 
