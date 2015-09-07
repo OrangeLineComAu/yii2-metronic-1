@@ -49,14 +49,14 @@ TooltipAsset::register($this)
         <div class="page-content">
 
             <!-- BEGIN MODAL -->
-            <?php Modal::begin(['id' => 'modal', 'options' => ['tabindex' => false]]);
+            <?php Modal::begin(['id' => 'modal', 'options' => ['tabindex' => 'false', 'data-backdrop' => 'static', 'data-keyboard' => 'false']]);
 
                 echo Html::beginTag('div', ['id' => 'modalContent']);
                     echo Html::beginTag('div', ['style' => 'text-align: center;']);
                         echo Html::img('@web/images/ajax-loader.gif');
                     echo Html::endTag('div');
                 echo Html::endTag('div');
-                
+
             Modal::end();?>
             <!-- END MODAL -->
 
