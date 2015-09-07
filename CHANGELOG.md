@@ -1,6 +1,11 @@
 CHANGELOG
 =====
 
+1.5.0 [7 Sep 2015]
+-----
+
+* `enh` Added modal form only close-able by clicking cross or submitting form
+
 1.4.1 [3 Sep 2015]
 -----
 
