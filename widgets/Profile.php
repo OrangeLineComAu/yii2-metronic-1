@@ -133,9 +133,10 @@ class Profile extends Widget
                 $html .= Html::tag('div', $this->renderMenu(), ['class' => 'profile-usermenu']);
             $html .= Html::endTag('div');
 
-            $html .= $this->renderStat();
-
-            $html .= $this->renderSummary();
+            $html .= Html::beginTag('div', ['class' => 'portlet light']);
+                $html .= $this->renderStat();
+                $html .= $this->renderSummary();
+            $html .= Html::endTag('div');
 
         $html .= Html::endTag('div');
 
@@ -170,7 +171,7 @@ class Profile extends Widget
                 $html .= Html::endTag('div');
             }
 
-            return Html::tag('div', Html::tag('div', $html, ['class' => 'row list-separated profile-stat']), ['class' => 'portlet light']);
+            return Html::tag('div', $html, ['class' => 'row list-separated profile-stat']);
         }
 
         return '';
@@ -192,7 +193,8 @@ class Profile extends Widget
                 }
             }
 
-            return Html::tag('div', $html, ['class' => 'portlet light']);
+            //return Html::tag('div', $html, ['class' => 'portlet light']);
+            return $html;
         }
 
         return '';
