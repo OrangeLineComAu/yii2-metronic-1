@@ -58,7 +58,7 @@ class Profile extends Widget
     /**
      * @param string
      */
-    public $imageUrl = '';
+    public $imageUrl;
 
     /**
      * @param string
@@ -120,9 +120,9 @@ class Profile extends Widget
         $html = '';
         $html .= Html::beginTag('div', ['class' => 'profile-sidebar', 'style' => 'width: 250px;']);
             $html .= Html::beginTag('div', ['class' => 'portlet light profile-sidebar-portlet']);
-                $html .= Html::beginTag('div', ['class' => 'profile-userpic']);
-                    $html .= Html::img($this->imageUrl, ['class' => 'img-responsive']);
-                $html .= Html::endTag('div');
+
+                $html .= $this->renderImage();
+
                 $html .= Html::beginTag('div', ['class' => 'profile-usertitle']);
                     $html .= Html::tag('div', $this->title, ['class' => 'profile-usertitle-name']);
                     $html .= Html::tag('div', $this->caption, ['class' => 'profile-usertitle-job']);
@@ -193,7 +193,6 @@ class Profile extends Widget
                 }
             }
 
-            //return Html::tag('div', $html, ['class' => 'portlet light']);
             return $html;
         }
 
@@ -210,12 +209,29 @@ class Profile extends Widget
             $html = '';
 
             foreach ($this->buttons as $button) {
-                    $html .= "$button\n";
+                    $html .= "$button";
             }
 
             return Html::tag('div', $html, ['class' => 'profile-userbuttons']);
         }
 
+        return '';
+    }
+
+    /**
+     * @return string
+     */
+    protected function renderImage()
+    {
+        if (isset($this->imageUrl)) {
+            $html = '';
+
+            $html .= Html::beginTag('div', ['class' => 'profile-userpic']);
+                $html .= Html::img($this->imageUrl, ['class' => 'img-responsive']);
+            $html .= Html::endTag('div');
+
+            return $html;
+        }
         return '';
     }
 }
