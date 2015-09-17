@@ -16,6 +16,7 @@ use yii\web\AssetBundle;
  */
 class MainAsset extends AssetBundle
 {
+
     /**
      * @inheritdoc
      */
@@ -68,6 +69,6 @@ class MainAsset extends AssetBundle
      */
     public $depends = [
         'yii\web\YiiAsset',
-        'yii\bootstrap\BootstrapAsset',
+        'yii\bootstrap\BootstrapAsset',        
     ];
 }

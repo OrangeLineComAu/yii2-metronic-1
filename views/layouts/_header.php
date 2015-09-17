@@ -9,6 +9,7 @@ $tenantName = (isset(Yii::$app->tenant->identity)) ? Html::encode(Yii::$app->ten
 $username = (isset(Yii::$app->user->identity)) ?  Html::encode(Yii::$app->user->identity->username) : '--';
 $logoutUrl = Url::to(['/auth0/user/logout']);
 $switchTenantUrl = Url::to(['/auth0/tenant/login']);
+$tenantSettingUrl = Url::to(['/setting/update']);
 
 ?>
 
@@ -44,6 +45,9 @@ $switchTenantUrl = Url::to(['/auth0/tenant/login']);
 						<ul class="dropdown-menu dropdown-menu-default">
 							<li>
 								<?= Html::a('<i class="icon-share-alt"></i> Change Tenant </a>',  false, ['value' => $switchTenantUrl, 'class' => 'showModalButton']) ?>
+							</li>
+							<li>
+								<?= Html::a('<i class="icon-settings"></i> Tenant Setting</a>',  false, ['value' => $tenantSettingUrl, 'class' => 'showModalButton']) ?>
 							</li>
 							<li>
 								<?= Html::a('<i class="icon-key"></i> Log Out </a>', $logoutUrl, ['data-method' => 'post']) ?>

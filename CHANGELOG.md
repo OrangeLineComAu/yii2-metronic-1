@@ -1,6 +1,12 @@
 CHANGELOG
 =====
 
+1.6.0 [17 Sep 2015]
+-----
+
+* `enh` Added setting link to header
+* `enh` Added profile widget
+
 1.5.0 [7 Sep 2015]
 -----
 
