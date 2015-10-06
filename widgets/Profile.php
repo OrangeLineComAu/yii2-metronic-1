@@ -133,10 +133,12 @@ class Profile extends Widget
                 $html .= Html::tag('div', $this->renderMenu(), ['class' => 'profile-usermenu']);
             $html .= Html::endTag('div');
 
-            $html .= Html::beginTag('div', ['class' => 'portlet light']);
-                $html .= $this->renderStat();
-                $html .= $this->renderSummary();
-            $html .= Html::endTag('div');
+            if (!empty($this->statItems) || !empty($this->statItems)) {
+                $html .= Html::beginTag('div', ['class' => 'portlet light']);
+                    $html .= $this->renderStat();
+                    $html .= $this->renderSummary();
+                $html .= Html::endTag('div');
+            }
 
         $html .= Html::endTag('div');
 
