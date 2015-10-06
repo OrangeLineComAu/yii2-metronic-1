@@ -89,3 +89,14 @@ Profile widget
     ]); ?>
     ...
     <?php Profile::end(); ?>
+
+Portlet Widget
+-----
+
+Add to your view file with:
+
+```
+use anli\metronic\widgets\Portlet;
+...
+
+```
