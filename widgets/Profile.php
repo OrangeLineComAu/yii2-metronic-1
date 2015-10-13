@@ -133,7 +133,7 @@ class Profile extends Widget
                 $html .= Html::tag('div', $this->renderMenu(), ['class' => 'profile-usermenu']);
             $html .= Html::endTag('div');
 
-            if (!empty($this->statItems) || !empty($this->statItems)) {
+            if (!empty($this->statItems) || !empty($this->summary)) {
                 $html .= Html::beginTag('div', ['class' => 'portlet light']);
                     $html .= $this->renderStat();
                     $html .= $this->renderSummary();
@@ -153,7 +153,8 @@ class Profile extends Widget
     {
         return Menu::widget([
             'items' => $this->menuItems,
-            'options' => ['class' => 'nav']
+            'options' => ['class' => 'nav'],
+            'encodeLabels' => false,
         ]);
     }
 

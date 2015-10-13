@@ -66,7 +66,7 @@ class Portlet extends Widget
                 echo Html::beginTag('div', ['class' => 'caption']);
                     echo $this->renderCaption();
                 echo Html::endTag('div');
-
+                
                 echo $this->renderButtons();
 
             echo Html::endTag('div');
