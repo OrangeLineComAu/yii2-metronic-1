@@ -1,5 +1,6 @@
 <?php
 
+use anli\metronic\assets\InitAsset;
 use anli\metronic\assets\MainAsset;
 use anli\helper\assets\ModalAsset;
 use anli\helper\assets\Select2Asset;
@@ -17,7 +18,12 @@ use kartik\alert\AlertBlock;
 MainAsset::register($this);
 ModalAsset::register($this);
 Select2Asset::register($this);
-TooltipAsset::register($this)
+TooltipAsset::register($this);
+InitAsset::register($this);
+
+$headerPath = Yii::$app->getModule('metronic')->headerPath;
+$sidebarPath = Yii::$app->getModule('metronic')->sidebarPath;
+$footerPath = Yii::$app->getModule('metronic')->footerPath;
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -34,7 +40,7 @@ TooltipAsset::register($this)
 <?php $this->beginBody() ?>
 
 <!-- BEGIN HEADER -->
-<?= $this->render('_header') ?>
+<?= $this->render($headerPath) ?>
 <!-- END HEADER -->
 
 <div class="clearfix"></div>
@@ -42,7 +48,7 @@ TooltipAsset::register($this)
 <div class="page-container">
 
     <!-- BEGIN SIDEBAR -->
-	<?= $this->render('_sidebar') ?>
+	<?= $this->render($sidebarPath) ?>
 	<!-- END SIDEBAR -->
 
     <div class="page-content-wrapper">
@@ -94,7 +100,7 @@ TooltipAsset::register($this)
 </div>
 </div>
 <!-- BEGIN FOOTER -->
-<?= $this->render('_footer') ?>
+<?= $this->render($footerPath) ?>
 <!-- END FOOTER -->
 
 <?php $this->endBody() ?>

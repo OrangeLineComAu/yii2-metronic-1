@@ -27,8 +27,24 @@ Copy the contents of the `js` folder to the `@web/metronic/js/` folder.
 
 Copy the contents of the `images` folder to the `@web/images/` folder.
 
+Add to the module section in your `config.php`
+
+```
+'metronic' => [
+    'class' => 'anli\metronic\Module',
+    'headerPath' => '@app/views/layouts/metronic/_header',
+    'sidebarPath' => '@app/views/layouts/metronic/_sidebar',
+    'footerPath' => '@app/views/layouts/metronic/_footer',
+],
+```
+
 Usage
 -----
+
+Add to the view file with:
+
+    Yii::$app->controller->layout = '@vendor/anli/yii2-metronic/views/layouts/main';
+
 
 Add to the `controller` or `module` file:
 
@@ -45,7 +61,7 @@ Profile widget
 
     use anli\metronic\widgets\Profile;
     ...
-    
+
     <?php Profile::begin([
         'imageUrl' => 'https://s.gravatar.com/avatar/ecd2a5b6d5a2d17e7bd9169b6f12515b?s=480&r=pg&d=https%3A%2F%2Fcdn.auth0.com%2Favatars%2Fjo.png',
         'title' => Html::encode($this->title),
@@ -73,3 +89,14 @@ Profile widget
     ]); ?>
     ...
     <?php Profile::end(); ?>
+
+Portlet Widget
+-----
+
+Add to your view file with:
+
+```
+use anli\metronic\widgets\Portlet;
+...
+
+```

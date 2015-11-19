@@ -1,6 +1,13 @@
 CHANGELOG
 =====
 
+1.7.0 [19 Sep 2015]
+-----
+
+* `chg` Removed js script in profile assets
+* `chg` Changed portlet and gridview widget
+* `enh` Added profile widget
+
 1.6.0 [17 Sep 2015]
 -----
 

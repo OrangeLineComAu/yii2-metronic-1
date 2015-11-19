@@ -57,6 +57,11 @@ class GridView extends Widget
     /**
      * @param array
      */
+    public $pjax;
+
+    /**
+     * @param array
+     */
     protected $configs = [
         'options' => ['class' => 'table-scrollable table-scrollable-borderless'],
         'tableOptions' => ['class' => 'table table-hover table-light'],
@@ -77,6 +82,7 @@ class GridView extends Widget
         $this->configs = array_replace_recursive($this->configs, ['columns' => $this->columns]);
         $this->configs = array_replace_recursive($this->configs, ['dataProvider' => $this->dataProvider]);
         $this->configs = array_replace_recursive($this->configs, ['filterModel' => $this->filterModel]);
+        $this->configs = array_replace_recursive($this->configs, ['filterModel' => $this->pjax]);
 
         if ('' != $this->id) {
             $this->configs = array_replace_recursive($this->configs, ['id' => $this->id]);

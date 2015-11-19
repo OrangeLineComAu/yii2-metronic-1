@@ -61,7 +61,6 @@ class MainAsset extends AssetBundle
         'assets/admin/layout2/scripts/layout.js',
         'assets/admin/layout2/scripts/demo.js',	//
         'assets/admin/pages/scripts/index.js',
-        '../js/init.js',                 // user created
     ];
 
     /**
@@ -69,6 +68,6 @@ class MainAsset extends AssetBundle
      */
     public $depends = [
         'yii\web\YiiAsset',
-        'yii\bootstrap\BootstrapAsset',        
+        'yii\bootstrap\BootstrapAsset',
     ];
 }
