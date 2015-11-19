@@ -40,7 +40,6 @@ class ProfileAsset extends AssetBundle
      */
     public $js = [
         'assets/admin/pages/scripts/profile.js',
-        '../js/profile.js',                 // user created
     ];
 
     /**
