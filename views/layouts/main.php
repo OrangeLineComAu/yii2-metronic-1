@@ -2,9 +2,6 @@
 
 use anli\metronic\assets\InitAsset;
 use anli\metronic\assets\MainAsset;
-use anli\helper\assets\ModalAsset;
-use anli\helper\assets\Select2Asset;
-use anli\helper\assets\TooltipAsset;
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\widgets\Breadcrumbs;
@@ -16,15 +13,14 @@ use kartik\alert\AlertBlock;
 /* @var $content string */
 
 MainAsset::register($this);
-ModalAsset::register($this);
-Select2Asset::register($this);
-TooltipAsset::register($this);
 InitAsset::register($this);
 
 $headerPath = Yii::$app->getModule('metronic')->headerPath;
 $sidebarPath = Yii::$app->getModule('metronic')->sidebarPath;
 $footerPath = Yii::$app->getModule('metronic')->footerPath;
 ?>
+
+
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
 <html lang="<?= Yii::$app->language ?>">
@@ -78,17 +74,6 @@ $footerPath = Yii::$app->getModule('metronic')->footerPath;
 				]) ?>
 			</div>
 			<!-- END PAGE HEADER-->
-
-                <?php Pjax::begin(['id' => 'message-pjax', 'timeout' => false]); ?>
-                <!-- BEGIN Alert Block -->
-                <?= AlertBlock::widget([
-                        'delay' => 0,
-                        'useSessionFlash' => true,
-                        'type' => AlertBlock::TYPE_ALERT,
-                    ]);
-                ?>
-                <!-- END Alert Block -->
-                <?php Pjax::end(); ?>
 
                 <!-- BEGIN PAGE CONTENT-->
                 <?= $content ?>
