@@ -44,4 +44,28 @@ class Body extends Widget
         $this->getView()->endBody();
         echo Html::endTag('body');
     }
+
+    /**
+     * @return mixed
+     */
+    public function header($params = [])
+    {
+        return new Header($params);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function sidebar($params = [])
+    {
+        return new Sidebar($params);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function footer($params = [])
+    {
+        return new Footer($params);
+    }
 }
