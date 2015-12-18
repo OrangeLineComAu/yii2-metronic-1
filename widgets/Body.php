@@ -9,6 +9,7 @@ namespace anli\metronic\widgets;
 
 use anli\metronic\assets\InitAsset;
 use anli\metronic\assets\MainAsset;
+use anli\metronic\assets\TooltipAsset;
 use Yii;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
@@ -31,6 +32,7 @@ class Body extends Widget
 
         MainAsset::register($this->getView());
         InitAsset::register($this->getView());
+        TooltipAsset::register($this->getView());
 
         echo Html::beginTag('body', ['class' => 'page-sidebar-closed-hide-logo page-container-bg-solid page-sidebar-closed-hide-logo page-boxed page-header-fixed page-footer-fixed']);
         $this->getView()->beginBody();
