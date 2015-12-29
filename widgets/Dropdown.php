@@ -30,6 +30,11 @@ class Dropdown extends Widget
     public $items;
 
     /**
+     * @var mixed
+     */
+    public $buttonName;
+
+    /**
      * Initializes the widget.
      */
     public function init()
@@ -53,7 +58,7 @@ class Dropdown extends Widget
      */
     private function renderButton()
     {
-        return isset($this->button) ? $this->button : Html::a(Html::tag('i', '', ['class' => 'fa fa-check-square-o', 'data-toggle' => 'tooltip', 'title' => 'Update Selected to..',]) . ' ' . Html::tag('i', '', ['class' => 'fa fa-angle-down']), false, ['data-toggle' => 'dropdown', 'class' => 'btn btn-circle red btn-sm dropdown-toggle', 'accesskey' => '']);
+        return isset($this->button) ? $this->button : Html::a(Html::tag('i', '', ['class' => 'fa fa-check-square-o', 'data-toggle' => 'tooltip', 'title' => 'Update Selected to..',]) . ' ' . Html::tag('i', '', ['class' => 'fa fa-angle-down']), false, ['data-toggle' => 'dropdown', 'class' => 'btn btn-circle red btn-sm dropdown-toggle', 'accesskey' => '', 'name' => $this->buttonName]);
     }
 
     /**

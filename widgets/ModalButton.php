@@ -24,6 +24,8 @@ class ModalButton extends Widget
     public $buttonCssClass = 'btn btn-circle green-haze btn-sm';
     public $url = '';
     public $buttonLabel = '';
+    public $name;
+    public $accessKey = 'n';
 
     /**
      * Initializes the widget.
@@ -43,7 +45,8 @@ class ModalButton extends Widget
             'value' => $this->url,
             'data-toggle' => 'tooltip', 'title' => $this->tooltipTitle,
             'class' => "showModalButton {$this->buttonCssClass}",
-            'accesskey' => 'n',
+            'accesskey' => $this->accessKey,
+            'name' => $this->name,
         ]);
     }
 }

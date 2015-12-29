@@ -102,7 +102,7 @@ class Header extends Widget
                 . Html::tag('span', Html::tag('small', $this->tenantName), ['class' => 'username username-hide-on-mobile'])
                 . Html::tag('i', '', ['class' => 'fa fa-angle-down']),
             '#',
-            ['class' => 'dropdown-toggle', 'data-toggle' => 'dropdown', 'data-hover' => 'dropdown', 'data-close-others' => 'true']
+            ['class' => 'dropdown-toggle', 'data-toggle' => 'dropdown', 'data-hover' => 'dropdown', 'data-close-others' => 'true', 'name' => 'header-navigation-menu-button']
         );
         $html .= Html::ul(
             $this->items,
