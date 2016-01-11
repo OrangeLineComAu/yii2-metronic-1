@@ -44,7 +44,7 @@ class Search extends Widget
         echo Html::tag('i', '', ['class' => 'icon-magnifier']);
 
         ActiveForm::begin([
-            'action' => [Yii::$app->controller->route],
+            'action' => $this->url,
             'method' => 'get',
         ]);
         echo Html::activeInput('text', $this->searchModel, 'searchField', ['class' => 'form-control input-circle', 'placeholder' => 'search...', 'autofocus' => true]);
@@ -53,9 +53,16 @@ class Search extends Widget
         echo Html::endTag('div');   // portlet-input input-inline
         echo Html::endTag('div');   // input-icon right
         echo ' ';
-        echo Html::a(Html::tag('i', '', ['class' => 'fa fa-refresh']), [Yii::$app->controller->route], ['class' => 'btn btn-circle purple btn-sm', 'accesskey' => '',
+        echo Html::a(Html::tag('i', '', ['class' => 'fa fa-refresh']), $this->url, ['class' => 'btn btn-circle purple btn-sm', 'accesskey' => '',
             'data-toggle' => 'tooltip', 'title' => 'Reset Search',
         ]);
     }
 
+    /**
+     * @return array
+     */
+    public function getUrl()
+    {
+        return array_merge([Yii::$app->controller->route], Yii::$app->request->queryParams);
+    }
 }
