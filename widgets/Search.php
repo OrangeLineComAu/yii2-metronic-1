@@ -63,6 +63,6 @@ class Search extends Widget
      */
     public function getUrl()
     {
-        return array_merge([Yii::$app->controller->route], Yii::$app->request->queryParams);
+        return array_merge(['/' . Yii::$app->controller->route], Yii::$app->request->queryParams);
     }
 }
