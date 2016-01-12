@@ -26,6 +26,7 @@ class Search extends Widget
      * @var mixed
      */
     public $searchModel;
+
     /**
      * Initializes the widget.
      */
@@ -53,7 +54,7 @@ class Search extends Widget
         echo Html::endTag('div');   // portlet-input input-inline
         echo Html::endTag('div');   // input-icon right
         echo ' ';
-        echo Html::a(Html::tag('i', '', ['class' => 'fa fa-refresh']), $this->url, ['class' => 'btn btn-circle purple btn-sm', 'accesskey' => '',
+        echo Html::a(Html::tag('i', '', ['class' => 'fa fa-refresh']), $this->resetUrl, ['class' => 'btn btn-circle purple btn-sm', 'accesskey' => '',
             'data-toggle' => 'tooltip', 'title' => 'Reset Search',
         ]);
     }
@@ -64,5 +65,24 @@ class Search extends Widget
     public function getUrl()
     {
         return array_merge(['/' . Yii::$app->controller->route], Yii::$app->request->queryParams);
+    }
+
+    /**
+     * @return array
+     */
+    public function getResetUrl()
+    {
+        $params = Yii::$app->request->queryParams;
+        unset($params[$this->searchModelShortName]);
+
+        return array_merge(['/' . Yii::$app->controller->route], $params);
+    }
+
+    /**
+     * @return string
+     */
+    protected function getSearchModelShortName()
+    {
+        return (new \ReflectionClass($this->searchModel))->getShortName();
     }
 }
