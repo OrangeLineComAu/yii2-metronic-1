@@ -7,7 +7,9 @@ $(document).on('click', '.showModalButton', function() {
         dataType: 'json',
         error: function(xhr, status, error) {
             if(xhr.status==200) {
-                return loadModal(url);
+                loadModal(url, '#modal');
+
+                return false;
             }
 
             if(xhr.status==403) {
@@ -21,15 +23,15 @@ $(document).on('click', '.showModalButton', function() {
     });
 });
 
-function loadModal(url) {
-    $('#modal').find('#modalContent')
+function loadModal(url, modalId) {
+    $(modalId).find('.modal-content')
         //.html("<div style='text-align: center;'><img src='/images/ajax-loader.gif' /></div>");
-    $('#modal').modal('show')
-            .find('#modalContent')
+    $(modalId).modal('show')
+            .find(modalId + '-content')
             .load(url);
-    $('#modal').on('shown.bs.modal', function () {
-        $('textarea:visible:first').focus();
-        $('input:visible:first').focus();
+    $(modalId).on('shown.bs.modal', function () {
+        $(modalId).find('textarea:visible:first').focus();
+        $(modalId).find('input:visible:first').focus();
     })
 
     return true;
