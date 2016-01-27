@@ -1,6 +1,25 @@
 CHANGELOG
 =====
 
+2.0.0 [27 Jan 2016]
+-----
+
+* `chg` Refactored body and header widget
+* `enh` Added documentation on body and header widget
+* `enh` Added sidebar widget
+* `enh` Added footer and sidebar, header, footer methods into body
+* `enh` Added tooltip js and search widget
+* `enh` Added dropdown widbget
+* `chg` Renamed modal to modal button
+* `chg` Updated widget for layout
+* `enh` Added url route to include query params
+* `chg` Updated minor changes to portlet
+* `bug` Fixed bug on search not working in module
+* `bug` Fixed bug with reset url
+* `bug` Fixed bug on profile on stats css not rendering correctly
+* `chg` Updated modal js
+
+
 1.7.0 [19 Sep 2015]
 -----
 
