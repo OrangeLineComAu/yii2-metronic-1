@@ -10,11 +10,11 @@ namespace anli\metronic\assets;
 use yii\web\AssetBundle;
 
 /**
- * This is the init asset bundle.
+ * This is the bootstrap tooltip asset bundle.
  * @author Su Anli <anli@euqol.com>
  * @since 2.0.0
  */
-class InitAsset extends AssetBundle
+class TooltipAsset extends AssetBundle
 {
     /**
      * @inheritdoc
@@ -25,7 +25,7 @@ class InitAsset extends AssetBundle
      * @inheritdoc
      */
     public $js = [
-        'js/init.js',
+        'js/tooltip-init.js',
     ];
 
     /**

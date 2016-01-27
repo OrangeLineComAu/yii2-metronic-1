@@ -100,3 +100,27 @@ use anli\metronic\widgets\Portlet;
 ...
 
 ```
+
+Body Widget
+-----
+
+```
+<?php anli\metronic\widgets\Body::begin(); ?>
+...
+<?= $content ?>
+...
+<?php anli\metronic\widgets\Body::end(); ?>
+```
+
+
+Header Widget
+-----
+
+```
+<?= anli\metronic\widgets\Header::widget([
+    'items' => [
+        Html::a('<i class="icon-share-alt"></i> Change Tenant </a>',  false, ['value' => '', 'class' => 'showModalButton']),
+        Html::a('<i class="icon-key"></i> Log Out </a>', '', ['data-method' => 'post']),
+    ]
+]); ?>
+```

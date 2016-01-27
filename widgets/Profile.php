@@ -168,7 +168,7 @@ class Profile extends Widget
             $divider = 12 / count($this->statItems);
 
             foreach ($this->statItems as $item) {
-                $html .= Html::beginTag('div', ['class' => "col-md-$divider col-sm-$divider col-xs-6"]);
+                $html .= Html::beginTag('div', ['class' => "col-md-$divider col-sm-$divider col-xs-$divider"]);
                     $html .= Html::tag('div', $item['title'], ['class' => "uppercase profile-stat-title"]);
                     $html .= Html::tag('div', $item['caption'], ['class' => "uppercase profile-stat-text"]);
                 $html .= Html::endTag('div');

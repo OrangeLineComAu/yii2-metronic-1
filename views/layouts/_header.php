@@ -35,7 +35,7 @@ $tenantSettingUrl = Url::to(['/setting/update']);
 			<div class="top-menu">
 				<ul class="nav navbar-nav pull-right">
 					<li class="dropdown dropdown-user">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+						<a name="header-user-dropdown" href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
 						<?= Html::img($profileUrl, ['alt' => '', 'class' =>'img-circle']) ?>
 						<span class="username username-hide-on-mobile">
 							<small><?= "$tenantName"; ?></small>
